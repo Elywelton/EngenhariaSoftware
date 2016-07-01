@@ -9,6 +9,8 @@ class Disciplina {
 	String turma
 	String semestre
 	
+	
+	
 	//TODO incluir disciplinas pre-requisitos
 	//TODO incluir professores responsaveis
 	//TODO incluir alunos
@@ -17,4 +19,5 @@ class Disciplina {
     }
 	
 	static mapping = { id generator: 'increment' }
+	static belongsTo = Professor
 }

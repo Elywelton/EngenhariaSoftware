@@ -13,14 +13,16 @@ class Estatistica {
 	Integer tipoIsolada
 	Integer mediaGeral
 	String cpf
+	
+	
 
 	static constraints = {
 	}
-
-	static belongsTo = [aluno : Aluno]
 
 	static mapping = {
 		id column: 'cpf', generator: 'foreign', params: [property: 'aluno']
 		cpf insertable: false, updateable: false
 	}
+	static hasMany = [professores:Professor]
+	static belongsTo = Professor
 }

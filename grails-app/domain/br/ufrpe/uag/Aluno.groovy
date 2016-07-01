@@ -9,6 +9,8 @@ class Aluno {
 	String periodoIngresso
 	String turno
 	double argmClassf
+	
+	
 
 	static constraints = {
 		cpf blank: false, nullable: false, unique:true
@@ -22,6 +24,7 @@ class Aluno {
 
 	static mapping = { id generator: 'increment' }
 
-	static hasMany = [estatisticas : Estatistica, periodos : Periodo]
+	static hasMany = [professores : Professor, estatisticas : Estatistica, periodos : Periodo]
+	static belongsTo = Professor
 }
 
